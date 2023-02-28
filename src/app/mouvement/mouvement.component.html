@@ -1,0 +1,49 @@
+<div >
+  <h1>devtrust</h1>
+</div>
+
+
+<div class="slides">
+  <div class="slide" id="1">
+      <div id="slider-wrapper">
+          <div class="controls">
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="play()">
+        Play
+      </button>
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="pause()">
+        Pause
+      </button>
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="reset()">
+        Reset
+      </button>
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="next()">
+        Next
+      </button>
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="prev()">
+        Previous
+      </button>
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="fast()">
+        Fast
+      </button>
+
+              <button type="button" class="btn btn-outline-warning mb-1" (click)="slow()">
+        Slow
+      </button>
+              <button id="speed" type="button" class="btn btn-outline-warning">
+        {{ speedMultiplier }}x
+      </button>
+          </div>
+
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapReady)="onMapReady($event)">
+              <div *ngIf="markerShow">
+                  <agm-marker *ngFor="let location of locations" [iconUrl]="mapIcon" [latitude]="location[0]" [longitude]="location[1]"></agm-marker>
+              </div>
+          </agm-map>
+
+
+      </div>
+  </div>
+
+
+
+</div>
